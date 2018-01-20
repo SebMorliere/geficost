@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- TODO : use international label -->
+	<meta id="metaDescription" name="description" content="Générateur de fichier de configuration serveur pour Teeworlds">
+	<meta name="author" content="Sébastien MORLIERE">
+
+	<title id="headTitle">GeFiCoST</title>
+
+	<link rel="shortcut icon" href="data/favicon.ico">
+
+	<!-- external CSS -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<!-- local CSS -->
+	<link href="css/custom.css" rel="stylesheet">
+</head>
+
+<!-- TODO : handle internationalisation of titles-->
+<body>
+	<header class="container">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" target="_blank" href="https://www.teeworlds.com/">Teeworlds</a>
+					<!-- TODO : use international label -->
+					<p id="navbarTitle" class="navbar-text">Documentation officielle du serveur (en ligne) :
+						<a class="navbar-link" target="_blank" href="https://www.teeworlds.com/?page=docs&wiki=server_setup" title="server setup">setup</a>
+						<a class="navbar-link" target="_blank" href="https://www.teeworlds.com/?page=docs&wiki=server_setup_2" title="server setup alternative">(alternative)</a>
+						/
+						<a class="navbar-link" target="_blank" href="https://www.teeworlds.com/?page=docs&wiki=server_settings" title="server settings">settings</a>
+						/
+						<a class="navbar-link" target="_blank" href="https://www.teeworlds.com/?page=docs&wiki=server_tuning" title="server tunning">tunning</a>
+						/
+						<a class="navbar-link" target="_blank" href="https://www.teeworlds.com/?page=docs&wiki=server_commands" title="server commands">commands</a>
+					</p>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown" id="language-dropdown"></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container" id="mainContent">
+		<!-- TODO : use international label -->
+		<h1 id="mainDivTitle">Configuration du serveur</h1>
+		<div class="container" id="settings-type"></div>
+		<!-- TODO : generate those elements with javascript -->
+			<div class="container" id="engineSettings">
+				<h2>Paramètres du moteur</h2>
+			</div>
+			<div class="container" id="gameSettings">
+				<h2>Paramètres du jeu</h2>
+			</div>
+			<div class="container" id="generateSettingFile">
+				<h2>Générer le fichier de configuration du serveur</h2>
+			</div>
+	</div>
+
+	<!-- TODO : generate those elements with javascript -->
+	<div class="container" id="aboutContent">
+		<h2>A propos</h2>
+		<p>Pour lancer un serveur custom, il faut créer un fichier de configuration <samp>serverconfig.cfg</samp> et le placer dans le répertoire de stockage du jeu, par défaut : <samp>%APPDATA%\Teeworlds</samp> (ce répertoire est différent de celui d'installation du jeu !).
+			<br>Ensuite dans une console et il faut utiliser la ligne de commande (depuis le répertoire du jeu) : <samp>teeworlds_srv.exe -f serverconfig.cfg</samp>.
+			<br>Il est possible de créer un raccourci sur le bureau de <samp>teeworlds_srv.exe</samp> directement avec les paramètres requis : en éditant les propriétés du raccourci et en rajoutant à la fin de la cible <abbr title="Cible : [répertoire de Teeworlds]/teeworlds_srv.exe -f serverconfig.cfg"><samp>&nbsp-f serverconfig.cfg</samp></abbr>
+		</p>
+	</div>
+	<!-- end of TODO -->
+
+	<footer class="navbar navbar-default navbar-fixed-bottom">
+		<div class="container">
+			<p class="text-muted navbar-text">
+				GeFiCoST 2017 <i>beta 171112</i> <span class="glyphicon glyphicon-registration-mark"></span> SuperChien <span class="fa fa-paw" aria-hidden="true"></span> Production
+            </p>
+		</div>
+	</footer>
+
+	<!-- external librairies -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- local data -->
+	<script type="text/javascript" src="data/settings.json.js"></script>
+	<script type="text/javascript" src="data/labels.json.js"></script>
+	<script type="text/javascript" src="lib/geficost.js"></script>
+
+</body>
+
+</html>
